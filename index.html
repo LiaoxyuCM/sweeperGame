@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Minesweeper Game</title>
+  <link rel="shortcut icon" href="https://assets.liaoxyucm.top/favicon.ico">
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+  <div class="game-container">
+    <div class="status" id="status">💣 10</div>
+    <div class="boardstyle" id="testb">
+      <div class="cell revealed" data-row="0" data-col="0"></div>
+      <div class="cell revealed" data-row="1" data-col="0">1</div>
+      <div class="cell revealed" data-row="2" data-col="0">2</div>
+      <div class="cell revealed" data-row="3" data-col="0">3</div>
+      <div class="cell revealed" data-row="4" data-col="0">4</div>
+      <div class="cell revealed" data-row="5" data-col="0">5</div>
+      <div class="cell revealed" data-row="6" data-col="0">6</div>
+      <div class="cell revealed" data-row="7" data-col="0">7</div>
+      <div class="cell revealed" data-row="8" data-col="0">8</div>
+      <div class="cell" data-row="9" data-col="0"></div>
+    </div>
+    <br>
+    <div id="board" class="boardstyle"></div>
+    <div class="operations">
+      <button id="reset" class="button">重新开始</button>
+      <button class="button showsettings">设置</button>
+    </div>
+  
+    <br>
+    <div class="coverboard"></div>
+    <div class="settings-container">
+      <p class="cancel">返回</p>
+      <p><strong>注意</strong>：提交设置后，游戏进度将会被丢失</p>
+      <hr>
+      <div class="flex-row">
+        <p>颜色方案：</p>
+        <select name="scheme" class="schemeset">
+          <option value="modern">现代</option>
+          <option value="classic">经典</option>
+          <option value="gray">黑白</option>
+        </select>
+      </div>
+      <div class="flex-row">
+        <p>雷数：</p>
+        <input name="mines" class="minesset" type="range" min="0" max="99" value="10" step="1" />
+        <p class="show_mines" style="font-family:monospace;"></p>
+      </div>
+      <hr>
+      <p>万宁扫雷</p>
+      <div class="flex-row">
+        <input name="cheat" class="cheat_showMines" type="checkbox" />
+        <p>显示雷</p>
+      </div>
+      <div class="flex-row">
+        <input name="cheat" class="cheat_flagJudgement" type="checkbox" />
+        <p>插旗判断</p>
+      </div>
+
+      <input type="submit" class="button submit" value="提交">
+    </div>
+
+    <noscript>
+      <div class="coverboard" style="display: flex"></div>
+      <div class="hint-container">
+        <h3>请启用JavaScript</h3>
+        <p>该游戏依赖JavaScript运行</p>
+      </div>
+    </noscript>
+  </div>
+</body>
+</html>
